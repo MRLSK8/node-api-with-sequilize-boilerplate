@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -13,7 +15,12 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'import',
   ],
+  globals: {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   settings: {
     'import/resolver': {
       node: {
