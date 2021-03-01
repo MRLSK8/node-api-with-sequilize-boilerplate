@@ -5,19 +5,43 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   plugins: [
     '@typescript-eslint',
+    'import',
   ],
+  globals: {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   rules: {
-    // 'prefer-object-spread': 'off',
-    // 'prefer-const': 'off',
+    'prefer-object-spread': 'off',
+    'prefer-const': 'off',
     'no-console': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     // 'no-new': 'off',
     // 'dot-notation': 'off',
     // 'consistent-return': 'off',
@@ -26,12 +50,13 @@ module.exports = {
     // 'no-restricted-syntax': 'off',
     // 'no-plusplus': 'off',
     // radix: 'off',
-    // 'class-methods-use-this': 'off',
+    'class-methods-use-this': 'off',
     // 'no-param-reassign': 'off',
     // camelcase: 'off',
-    // 'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
-    // 'import/first': 'off',
-    // 'import/prefer-default-export': 'off',
+    'no-unused-vars': 'off',
+    'import/first': 'off',
+    'import/prefer-default-export': 'off',
+    'lines-between-class-members': 'off',
     // 'import/no-cycle': 'off',
     // 'prefer-destructuring': 'off',
     // 'no-nested-ternary': 'off',
