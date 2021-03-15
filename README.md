@@ -1,1 +1,1 @@
-## Node api boilerplate with sequelize and typescript
+## Node api boilerplate with sequelize
