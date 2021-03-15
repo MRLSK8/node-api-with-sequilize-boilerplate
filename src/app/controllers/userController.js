@@ -1,7 +1,5 @@
-import { Request, Response } from 'express';
-
 class UserController {
-  async store(req: Request, res: Response) {
+  async store(req, res) {
     res.json({ message: 'Success' });
   }
 }
