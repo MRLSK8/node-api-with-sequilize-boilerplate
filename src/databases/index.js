@@ -27,7 +27,7 @@ class Database {
       })
       .catch(() => {
         console.log(
-          `Connection unsuccessfully database on port ${process.env.DB_PORT}`,
+          `Connection error. \nTried to connect to database on port ${process.env.DB_PORT}`,
         );
       });
 

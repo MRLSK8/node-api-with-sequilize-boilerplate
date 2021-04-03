@@ -4,6 +4,6 @@ import { UserController } from '../app/controllers';
 
 const userRoutes = Router();
 
-userRoutes.post('/', UserController.store);
+userRoutes.delete('/:id/delete', UserController.destroy);
 
 export default userRoutes;

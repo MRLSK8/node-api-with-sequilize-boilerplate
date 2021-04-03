@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import registerRoutes from './register.routes';
 import authRoutes from './auth.routes';
+import userRoutes from './user.routes';
 
 const routes = Router();
 
@@ -18,5 +19,7 @@ routes.get('/', (request, response) => {
 routes.use('/register', registerRoutes);
 
 routes.use('/auth', authRoutes);
+
+routes.use('/user', userRoutes);
 
 export default routes;
