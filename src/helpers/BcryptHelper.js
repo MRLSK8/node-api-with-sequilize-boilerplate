@@ -1,5 +1,4 @@
 import bcrypt from 'bcryptjs';
-
 class BcryptHelper {
   hash(password) {
     return bcrypt.hashSync(password, parseInt(process.env.BCRYPT_SALT));

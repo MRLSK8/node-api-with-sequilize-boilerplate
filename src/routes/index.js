@@ -4,6 +4,8 @@ import registerRoutes from './register.routes';
 import authRoutes from './auth.routes';
 import userRoutes from './user.routes';
 
+import { jwtMiddleware } from '../middlewares';
+
 const routes = Router();
 
 routes.get('/', (request, response) => {
@@ -20,6 +22,6 @@ routes.use('/register', registerRoutes);
 
 routes.use('/auth', authRoutes);
 
-routes.use('/user', userRoutes);
+routes.use('/user', jwtMiddleware, userRoutes);
 
 export default routes;

@@ -1,7 +1,6 @@
 import multer from 'multer';
 
 import { multerConfig } from '../config';
-
 class MulterHelper {
   constructor() {
     this.upload = multer(multerConfig);
