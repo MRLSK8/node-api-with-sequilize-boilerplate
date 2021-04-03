@@ -1,4 +1,4 @@
-import { AppError } from "../../errors";
+import { AppError } from "../errors";
 import { User } from "../models";
 
 class UserController {

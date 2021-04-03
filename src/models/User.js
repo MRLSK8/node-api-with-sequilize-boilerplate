@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 
-import { BcryptHelper } from '../../helpers';
+import { BcryptHelper } from '../helpers';
 
 class User extends Model {
   static init(connection) {

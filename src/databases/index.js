@@ -4,7 +4,7 @@ import databaseConfig from '../config/database';
 
 import {
   User
-} from '../app/models';
+} from '../models';
 
 const models = [
   User
