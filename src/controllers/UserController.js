@@ -4,9 +4,9 @@ import { User } from "../models";
 class UserController {
   async destroy(req, res) {
     const {
-      params: { id }
+      userId: id
     } = req;
-
+    
     const messages = {
       success: "Usuário deletado com sucesso.",
       error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",

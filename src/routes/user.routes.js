@@ -4,6 +4,6 @@ import { UserController } from '../controllers';
 
 const userRoutes = Router();
 
-userRoutes.delete('/:id/delete', UserController.destroy);
+userRoutes.delete('/', UserController.destroy);
 
 export default userRoutes;

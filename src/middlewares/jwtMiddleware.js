@@ -12,7 +12,7 @@ const jwtMiddleware = (req, res, next) => {
 
   if (authorization) {
     const [, token] = authorization.split(' ');
-
+    
     try {
       const decodedToken = JwtHelper.verify(token);
 

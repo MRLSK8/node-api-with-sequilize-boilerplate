@@ -1,3 +1,4 @@
+import { JwtHelper } from "../helpers";
 import { AppError } from "../errors";
 import { User } from "../models";
 
@@ -32,7 +33,12 @@ class AuthController {
     const data = {
       id: user.id,
       name: user.name,
-      email: user.email
+      email: user.email,
+      token: JwtHelper.sign({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+      }),
     }
 
     res.json({ message: messages.success, data });

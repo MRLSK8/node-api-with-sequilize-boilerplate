@@ -34,13 +34,7 @@ class RegisterController {
       throw new AppError(messages.error);
     }
 
-    const data = {
-      id: registedUserData.id,
-      name: registedUserData.name,
-      email: registedUserData.email
-    }
-
-    res.json({ message: messages.success, data });
+    res.json({ message: messages.success });
   }
 }
 
