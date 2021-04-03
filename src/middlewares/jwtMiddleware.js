@@ -12,14 +12,14 @@ const jwtMiddleware = (req, res, next) => {
 
   if (authorization) {
     const [, token] = authorization.split(' ');
-    
+
     try {
       const decodedToken = JwtHelper.verify(token);
 
       req.userId = decodedToken.id;
 
       return next();
-    } catch (e) {
+    } catch (error) {
       throw new AppError(messages.error, null, 401);
     }
   } else {

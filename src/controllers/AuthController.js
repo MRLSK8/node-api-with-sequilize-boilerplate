@@ -41,7 +41,7 @@ class AuthController {
       }),
     }
 
-    res.json({ message: messages.success, data });
+    return res.json({ message: messages.success, data });
   }
 }
 

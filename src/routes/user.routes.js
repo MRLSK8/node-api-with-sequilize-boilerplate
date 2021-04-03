@@ -6,4 +6,6 @@ const userRoutes = Router();
 
 userRoutes.delete('/', UserController.destroy);
 
+userRoutes.put('/', UserController.update);
+
 export default userRoutes;

@@ -16,7 +16,6 @@ class RegisterController {
     }
 
     let userAlreadyExists;
-    let registedUserData;
 
     try {
       userAlreadyExists = await User.findOne({ where: { email } });
@@ -29,12 +28,13 @@ class RegisterController {
     }
 
     try {
-      registedUserData = await User.create({ id: uuidv4(), name, email, password });
+      await User.create({ id: uuidv4(), name, email, password });
+
+      return res.json({ message: messages.success });
     } catch (error) {
       throw new AppError(messages.error);
     }
 
-    res.json({ message: messages.success });
   }
 }
 

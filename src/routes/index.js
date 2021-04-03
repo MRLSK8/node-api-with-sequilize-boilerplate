@@ -8,8 +8,8 @@ import { jwtMiddleware } from '../middlewares';
 
 const routes = Router();
 
-routes.get('/', (request, response) => {
-  return response.json({
+routes.get('/', (req, res) => {
+  return res.json({
     Author: 'Marcelo Lima',
     Github: 'https://github.com/mrlsk8',
     Project: 'Node API',
