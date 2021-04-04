@@ -37,7 +37,7 @@ class UserController {
   async update(req, res) {
     const {
       userId: id,
-      body
+      body: { name, email }
     } = req;
 
     const messages = {
@@ -59,7 +59,7 @@ class UserController {
     }
 
     try {
-      await User.update(body, { where: { id } });
+      await User.update({ name, email }, { where: { id } });
 
       return res.json({ message: messages.success });
     } catch (error) {
