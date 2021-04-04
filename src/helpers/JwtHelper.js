@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-
 class JwtHelper {
   sign(data) {
     return jwt.sign(data, process.env.JWT_SECRET);

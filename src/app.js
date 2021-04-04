@@ -1,15 +1,16 @@
 import 'express-async-errors';
-import express, { Request, NextFunction, Response } from 'express';
+
 import exphbs from 'express-handlebars';
+import express from 'express';
 import cors from 'cors';
 import path from 'path';
 
 import { AppError } from './errors';
 import routes from './routes';
 
-class App {
-  public server: any;
+import './databases';
 
+class App {
   constructor() {
     this.server = express();
     this.middlewares();
@@ -28,9 +29,9 @@ class App {
   }
 
   errors() {
-    this.server.use((e: Error | AppError, req: Request, res: Response, next: NextFunction) => {
+    this.server.use((e, req, res, next) => {
       if (e instanceof AppError) {
-        const result: any = {};
+        const result = {};
 
         if (e.message) {
           result.message = e.message;
