@@ -3,11 +3,11 @@ import { JwtHelper } from '../helpers';
 
 const jwtMiddleware = (req, res, next) => {
   const {
-    headers: { authorization },
+    headers: { authorization }
   } = req;
 
   const messages = {
-    error: 'Você não possui autorização para realizar essa ação.',
+    error: 'Você não possui autorização para realizar essa ação.'
   };
 
   if (authorization) {

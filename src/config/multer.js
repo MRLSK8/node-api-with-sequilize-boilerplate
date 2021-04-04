@@ -11,9 +11,9 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(
       null,
-      `${StringHelper.random()}.${mimeTypes.extension(file.mimetype)}`,
+      `${StringHelper.random()}.${mimeTypes.extension(file.mimetype)}`
     );
-  },
+  }
 });
 
 export default { storage };

@@ -14,7 +14,7 @@ routes.get('/', (req, res) => {
     Github: 'https://github.com/mrlsk8',
     Project: 'Node API',
     Version: '1.0.0',
-    Status: 'Online',
+    Status: 'Online'
   });
 });
 

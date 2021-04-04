@@ -1,19 +1,19 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { AppError } from "../errors";
-import { User } from "../models";
+import { AppError } from '../errors';
+import { User } from '../models';
 
 class RegisterController {
-  async store(req, res) {
+  async store (req, res) {
     const {
       body: { name, email, password }
     } = req;
 
     const messages = {
-      success: "Usuário cadastrado com sucesso.",
-      error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
-      userAlreadyExists: "Usuário já cadastrado, faça login para acessar o sistema."
-    }
+      success: 'Usuário cadastrado com sucesso.',
+      error: 'Ocorreu um erro. Por favor, tente novamente mais tarde.',
+      userAlreadyExists: 'Usuário já cadastrado, faça login para acessar o sistema.'
+    };
 
     let userAlreadyExists;
 
@@ -34,7 +34,6 @@ class RegisterController {
     } catch (error) {
       throw new AppError(messages.error);
     }
-
   }
 }
 
