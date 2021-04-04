@@ -11,7 +11,7 @@ import routes from './routes';
 import './databases';
 
 class App {
-  constructor() {
+  constructor () {
     this.server = express();
     this.middlewares();
     this.routes();
@@ -19,16 +19,16 @@ class App {
     this.views();
   }
 
-  middlewares() {
+  middlewares () {
     this.server.use(express.json());
     this.server.use(cors());
   }
 
-  routes() {
+  routes () {
     this.server.use(routes);
   }
 
-  errors() {
+  errors () {
     this.server.use((e, req, res, next) => {
       if (e instanceof AppError) {
         const result = {};
@@ -50,7 +50,7 @@ class App {
     });
   }
 
-  views() {
+  views () {
     this.server.engine('hbs', exphbs({ extname: '.hbs' }));
     this.server.set('view engine', 'hbs');
     this.server.set('views', path.resolve(__dirname, 'views'));

@@ -1,17 +1,17 @@
-import { AppError } from "../errors";
-import { User } from "../models";
+import { AppError } from '../errors';
+import { User } from '../models';
 
 class UserController {
-  async destroy(req, res) {
+  async destroy (req, res) {
     const {
       userId: id
     } = req;
 
     const messages = {
-      success: "Usuário deletado com sucesso.",
-      error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+      success: 'Usuário deletado com sucesso.',
+      error: 'Ocorreu um erro. Por favor, tente novamente mais tarde.',
       userNotFound: 'Usuário não encontrado. Verifique os dados e tente novamente.'
-    }
+    };
 
     let user;
 
@@ -34,17 +34,17 @@ class UserController {
     }
   }
 
-  async update(req, res) {
+  async update (req, res) {
     const {
       userId: id,
       body: { name, email }
     } = req;
 
     const messages = {
-      success: "Informações atualizadas com sucesso.",
-      error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+      success: 'Informações atualizadas com sucesso.',
+      error: 'Ocorreu um erro. Por favor, tente novamente mais tarde.',
       userNotFound: 'Usuário não encontrado. Verifique os dados e tente novamente.'
-    }
+    };
 
     let user;
 
@@ -66,6 +66,6 @@ class UserController {
       throw new AppError(messages.error);
     }
   }
-};
+}
 
 export default new UserController();

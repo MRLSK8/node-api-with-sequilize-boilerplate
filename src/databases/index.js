@@ -11,23 +11,23 @@ const models = [
 ];
 
 class Database {
-  constructor() {
+  constructor () {
     this.init();
   }
 
-  init() {
+  init () {
     this.connection = new Sequelize(databaseConfig);
 
     this.connection
       .authenticate()
       .then(() => {
         console.log(
-          `Connected successfully with database on port ${process.env.DB_PORT}`,
+          `Connected successfully with database on port ${process.env.DB_PORT}`
         );
       })
       .catch(() => {
         console.log(
-          `Connection error. \nTried to connect to database on port ${process.env.DB_PORT}`,
+          `Connection error. \nTried to connect to database on port ${process.env.DB_PORT}`
         );
       });
 

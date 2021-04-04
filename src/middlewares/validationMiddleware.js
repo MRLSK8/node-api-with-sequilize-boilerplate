@@ -10,7 +10,7 @@ const validationMiddleware = (schema) => {
       const { errors } = e;
       throw new AppError(errors.join(', '));
     }
-  }
-}
+  };
+};
 
 export default validationMiddleware;

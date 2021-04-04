@@ -1,5 +1,5 @@
 class StringHelper {
-  random(length = 16) {
+  random (length = 16) {
     const xl = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     let result = '';

@@ -1,18 +1,18 @@
-import { JwtHelper } from "../helpers";
-import { AppError } from "../errors";
-import { User } from "../models";
+import { JwtHelper } from '../helpers';
+import { AppError } from '../errors';
+import { User } from '../models';
 
 class AuthController {
-  async store(req, res) {
+  async store (req, res) {
     const {
       body: { email, password }
     } = req;
 
     const messages = {
-      success: "Login realizado com sucesso.",
-      error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+      success: 'Login realizado com sucesso.',
+      error: 'Ocorreu um erro. Por favor, tente novamente mais tarde.',
       wrongCredentials: 'E-mail ou senha incorretos. Verifique os dados e tente novamente.'
-    }
+    };
 
     let user;
 
@@ -37,9 +37,9 @@ class AuthController {
       token: JwtHelper.sign({
         id: user.id,
         name: user.name,
-        email: user.email,
-      }),
-    }
+        email: user.email
+      })
+    };
 
     return res.json({ message: messages.success, data });
   }

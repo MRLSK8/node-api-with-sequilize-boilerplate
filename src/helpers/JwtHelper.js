@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
 class JwtHelper {
-  sign(data) {
+  sign (data) {
     return jwt.sign(data, process.env.JWT_SECRET);
   }
 
-  verify(token) {
+  verify (token) {
     return jwt.verify(token, process.env.JWT_SECRET);
   }
 }
