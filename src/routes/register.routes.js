@@ -2,10 +2,10 @@ import { Router } from 'express';
 
 import { validationMiddleware } from '../middlewares';
 import { RegisterController } from '../controllers';
-import { registerValidator } from '../validators';
+import { registerUserValidator } from '../validators';
 
 const registerRoutes = Router();
 
-registerRoutes.post('/', validationMiddleware(registerValidator), RegisterController.store);
+registerRoutes.post('/', validationMiddleware(registerUserValidator), RegisterController.store);
 
 export default registerRoutes;
