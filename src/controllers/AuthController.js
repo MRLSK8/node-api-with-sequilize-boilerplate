@@ -44,5 +44,5 @@ class AuthController {
     return res.json({ message: messages.success, data });
   }
 }
-
+ 
 export default new AuthController();
